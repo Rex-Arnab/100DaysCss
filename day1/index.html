@@ -1,1 +1,110 @@
-<h1>This is Day 1 Challenge</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #43389F;
+            background: -webkit-linear-gradient(bottom left, #43389F 0%, #4ec6ca 100%);
+            background: -moz-linear-gradient(bottom left, #43389F 0%, #4ec6ca 100%);
+            background: -o-linear-gradient(bottom left, #43389F 0%, #4ec6ca 100%);
+            background: linear-gradient(to top right, #43389F 0%, #4ec6ca 100%);
+            min-height: 100vh;
+            display: grid;
+            place-content: center;
+            font-family: 'Courier New', 'Courier', sans-serif;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        #top_one {
+            width: 24px;
+            height: 77px;
+            background: #fff;
+            border-radius: 4px;
+            position: absolute;
+            overflow: hidden;
+            transform: translate(-144px, 75px);
+            rotate: 58deg;
+            transform-origin: top right;
+        }
+
+        #top_two {
+            width: 30px;
+            height: 150px;
+            background: #fff;
+            border-radius: 4px;
+            position: absolute;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            z-index: 5;
+            transform: translate(-135px, -102px);
+        }
+
+        .circle {
+            width: 150px;
+            height: 150px;
+            background: transparent;
+            border-radius: 50%;
+            position: absolute;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            border: 30px solid #fff;
+        }
+
+        #zero_one {
+            transform: translate(-128px, -102px);
+            z-index: 2;
+        }
+
+        #zero_two {
+            transform: translate(0px, -102px);
+            z-index: 1;
+        }
+
+        .relative {
+            position: relative;
+            left: 9rem;
+            top: 2rem;
+        }
+
+        main {
+            transform: translate(-155px, 35px);
+        }
+
+        .big {
+            font-size: 8rem;
+        }
+
+        .small {
+            font-weight: 600;
+            font-size: 2.4rem;
+            transform: translate(-1px, -38px);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="relative">
+        <div id="top_one"></div>
+        <div id="top_two"></div>
+        <div id="zero_one" class="circle"></div>
+        <div id="zero_two" class="circle"></div>
+        <main>
+            <div class="big">Days</div>
+            <div class="small">CSS Challenge</div>
+        </main>
+    </section>
+</body>
+
+</html>
