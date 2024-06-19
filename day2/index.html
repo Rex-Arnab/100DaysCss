@@ -76,17 +76,17 @@
             }
 
             100% {
-                transform: translateY(-30px) rotate(-45deg);
+                transform: translateY(-30px) rotate(125deg);
             }
         }
 
         @keyframes bottomReverse {
             0% {
-                transform: translateY(-30px) rotate(-45deg);
+                transform: translateY(-30px) rotate(125deg);
             }
 
             50% {
-                transform: translateY(-45px) rotate(0);
+                transform: translateY(-30px) rotate(0);
             }
 
             100% {
@@ -132,30 +132,30 @@
 
         div.active:nth-child(1) {
             transform: translateY(60px) rotate(45deg);
-            animation: top 0.5s ease-in-out 1;
+            animation: top 0.25s ease-in-out 1;
         }
 
         div:nth-child(1) {
-            animation: topReverse 0.5s ease-in-out 1;
+            animation: topReverse 0.25s ease-in-out 1;
         }
 
         div.active:nth-child(3) {
-            transform: translateY(-30px) rotate(-45deg);
-            animation: bottom 0.5s ease-in-out 1;
+            transform: translateY(-30px) rotate(125deg);
+            animation: bottom 0.25s ease-in-out 1;
         }
 
         div:nth-child(3) {
-            animation: bottomReverse 0.5s ease-in-out 1;
+            animation: bottomReverse 0.25s ease-in-out 1;
         }
 
         div.active:nth-child(2) {
             opacity: 0;
-            animation: center 0.5s ease-in-out;
+            animation: center 0.25s ease-in-out;
         }
 
         div:nth-child(2) {
             opacity: 1;
-            animation: centerReverse 0.5s ease-in-out;
+            animation: centerReverse 0.25s ease-in-out;
         }
     </style>
 </head>
