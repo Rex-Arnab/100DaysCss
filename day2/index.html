@@ -25,6 +25,8 @@
             gap: 1rem;
             cursor: pointer;
             user-select: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
         div {
@@ -136,7 +138,6 @@
         }
 
         div:nth-child(1) {
-            /* transform: translateY(60px) rotate(45deg); */
             animation: topReverse 0.5s ease-in-out 1;
         }
 
@@ -146,7 +147,6 @@
         }
 
         div:nth-child(3) {
-            /* transform: translateY(-30px) rotate(-45deg); */
             animation: bottomReverse 0.5s ease-in-out 1;
         }
 
