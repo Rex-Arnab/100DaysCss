@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsession</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+        }
+
+        #card {
+            background: #4cb6de;
+            color: white;
+            width: 350px;
+            /* margin: auto; */
+            /* border: 2px solid black; */
+            border-radius: 5px;
+            padding: 1em;
+            font-size: 1.7em;
+            word-spacing: 10px;
+            line-height: 40px;
+            z-index: 1;
+        }
+
+        #card .content {
+            position: relative;
+            z-index: 1;
+            font-size: 24px;
+            line-height: 35px;
+            margin: 20px 0;
+            display: inline;
+        }
+
+        .quote:before {
+            display: block;
+            position: relative;
+            z-index: 0;
+            content: "„";
+            font-family: Arial;
+            font-size: 250px;
+            color: #6AC2E3;
+            line-height: 35px;
+            top: -20px;
+            /* left: -17px; */
+        }
+
+        #card author {
+            display: block;
+            margin-top: 1em;
+            font-family: "Zen Loop", cursive;
+            font-weight: bold;
+        }
+
+        .word {
+            background: #286f8a;
+            padding: 5px;
+            z-index: 1;
+        }
+
+        .info:before {
+            position: absolute;
+            content: "";
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+            top: -5px;
+            left: 25%;
+            margin-left: -5px;
+            background: #286f8a;
+        }
+
+        .word .info {
+            display: block;
+            background: #286f8a;
+            position: absolute;
+            width: 280px;
+            font-size: 16px;
+            line-height: 24px;
+            transform: translate(50%, 5%);
+            visibility: hidden;
+            transition: all 0.5s ease-in-out;
+            opacity: 0;
+        }
+
+        .word:hover .info {
+            visibility: visible;
+            opacity: 1;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.336);
+        }
+
+        .info .pronounciation {
+            background: white;
+            color: #286f8a;
+        }
+
+        .info div {
+            padding: 10px;
+        }
+
+        .sound-btn {
+            cursor: pointer;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quote">
+        <div id="card">
+            <span class="content">I know quite certainly that I myself have no special talent;
+                curiosity,
+                <span class="word">Hello<div class="info">
+                        <div class="defination">
+                            <strong>Obsession:</strong>, a
+                            persistent disturbing preoccupation with
+                            an often unreasonable idea or feeling
+                        </div>
+
+                        <div class="pronounciation">
+                            [əbˈseʃ(ə)n]<i class="sound-btn fas fa-volume-up" data-word="obsession"></i>
+                        </div>
+                    </div></span>
+                and dogged endurance, combined with self-criticism have brought me to my ideas.</span>
+            <author>-Albert Einstein</author>
+        </div>
+    </div>
+    <script>
+        let synth = window.speechSynthesis;
+        document.querySelector('.sound-btn').addEventListener("click", playSound);
+        function playSound() {
+            synth.cancel();
+            const msg = new SpeechSynthesisUtterance();
+            msg.text = this.dataset.word;
+            msg.volume = 0.5;
+            msg.voice = synth.getVoices()[0];
+            synth.speak(msg);
+        }
+    </script>
+</body>
+
+</html>
