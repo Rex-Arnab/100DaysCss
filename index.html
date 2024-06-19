@@ -5,21 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Challenges</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <h1>100 Days Css Challenges</h1>
+<body class="bg-slate-200 p-5 min-h-screen grid grid-cols-1 md:grid-cols-2 gap-5">
+    <section class="border bg-white rounded-xl shadow p-5 flex flex-col">
+        <iframe src="day1/index.html" class="w-full h-96 rounded-2xl shadow" title="firstChallenge"></iframe>
+        <a href="day1/index.html" class="text-2xl p-5 font-bold uppercase text-xl">Profile Card</a>
+    </section>
 
-    <table>
-        <tr>
-            <th>Challenge Banner</th>
-            <td><a href="day1/index.html">Link</a></td>
-        </tr>
-        <tr>
-            <th>Menu Icon</th>
-            <td><a href="day2/index.html">Link</a></td>
-        </tr>
-    </table>
+    <section class="border bg-white rounded-xl shadow p-5 flex flex-col">
+        <iframe src="day2/index.html" class="w-full h-96 rounded-2xl shadow" title="secondChallenge"></iframe>
+        <a href="day2/index.html" class="text-2xl p-5 font-bold uppercase text-xl">Social Media Dashboard</a>
+    </section>
+    
+    <!-- comming soon box -->
+    <section class="border bg-white rounded-xl shadow p-5 flex flex-col">
+        <div class="w-full h-96 bg-gray-500 rounded-2xl shadow grid place-content-center text-white text-7xl">
+            Day 3
+        </div>
+        <a href="day3/index.html" class="text-2xl p-5 font-bold uppercase text-xl">Coming Soon</a>
+    </section>
 </body>
 
 </html>
