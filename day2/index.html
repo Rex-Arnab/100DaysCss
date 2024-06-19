@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 - Menu Icon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(100, 23, 189);
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            cursor: pointer;
+        }
+
+        div {
+            width: 300px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+        }
+
+        @keyframes top {
+            0% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(50px) rotate(0);
+                box-shadow: 0 0 100px rgba(255, 255, 255, 1);
+            }
+
+            100% {
+                transform: translateY(60px) rotate(45deg);
+            }
+        }
+
+        @keyframes topReverse {
+            0% {
+                transform: translateY(60px) rotate(45deg);
+            }
+
+            50% {
+                transform: translateY(50px) rotate(0);
+            }
+
+            100% {
+                transform: translateY(0) rotate(0);
+            }
+        }
+
+
+        @keyframes bottom {
+            0% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(-45px) rotate(0);
+                box-shadow: 0 0 100px rgba(255, 255, 255, 1);
+            }
+
+            100% {
+                transform: translateY(-30px) rotate(-45deg);
+            }
+        }
+
+        @keyframes bottomReverse {
+            0% {
+                transform: translateY(-30px) rotate(-45deg);
+            }
+
+            50% {
+                transform: translateY(-45px) rotate(0);
+            }
+
+            100% {
+                transform: translateY(0) rotate(0);
+            }
+        }
+
+        @keyframes center {
+            0% {
+                opacity: 1;
+            }
+
+            30% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes centerReverse {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            70% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        div.active:nth-child(1) {
+            transform: translateY(60px) rotate(45deg);
+            animation: top 0.5s ease-in-out 1;
+        }
+
+        div:nth-child(1) {
+            /* transform: translateY(60px) rotate(45deg); */
+            animation: topReverse 0.5s ease-in-out 1;
+        }
+
+        div.active:nth-child(3) {
+            transform: translateY(-30px) rotate(-45deg);
+            animation: bottom 0.5s ease-in-out 1;
+        }
+
+        div:nth-child(3) {
+            /* transform: translateY(-30px) rotate(-45deg); */
+            animation: bottomReverse 0.5s ease-in-out 1;
+        }
+
+        div.active:nth-child(2) {
+            opacity: 0;
+            animation: center 0.5s ease-in-out;
+        }
+
+        div:nth-child(2) {
+            opacity: 1;
+            animation: centerReverse 0.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+
+    <script>
+        const menu = document.querySelector('section');
+        const divs = document.querySelectorAll('div');
+
+        menu.addEventListener('click', () => {
+            divs.forEach((div, index) => {
+                div.classList.toggle('active');
+            })
+        })
+    </script>
+</body>
+
+</html>
