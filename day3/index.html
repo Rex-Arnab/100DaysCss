@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #2E2E2E;
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+        }
+
+        @keyframes screenOff {
+            0% {
+                opacity: 0;
+            }
+
+            30% {
+                opacity: 1;
+            }
+
+            70% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        section {
+            background-color: lightblue;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: relative;
+            z-index: 10;
+            overflow: hidden;
+            box-shadow: 0 0 1px rgba(255, 255, 255, 1);
+            animation: screenOff 4s cubic-bezier(.4, 0, .49, 1) infinite;
+        }
+
+        @keyframes sunRiseAndSet {
+            0% {
+                background: #F57209;
+                transform: rotate(-70deg);
+            }
+
+            30% {
+                background: #FFEF00;
+                transform: rotate(-28deg);
+            }
+
+            70% {
+                background: #FFEF00;
+            }
+
+            100% {
+                background: #F57209;
+                transform: rotate(70deg);
+            }
+        }
+
+        @keyframes fadingSand {
+            0% {
+                background: #272C34;
+            }
+
+            30% {
+                background: #F0DE75;
+            }
+
+            70% {
+                background: #F0DE75;
+            }
+
+            100% {
+                background: #272C34;
+            }
+        }
+
+        @keyframes pyramidShadow {
+            0% {
+                clip-path: polygon(129px 23%, 230px 23%, 75% 30%);
+            }
+
+            30% {
+                clip-path: polygon(129px 23%, 230px 23%, 60% 50%);
+            }
+
+
+            70% {
+                clip-path: polygon(129px 23%, 230px 23%, 40% 70%);
+            }
+
+            100% {
+                clip-path: polygon(129px 23%, 230px 23%, 15% 40%);
+            }
+        }
+
+        @keyframes pyrimidRightShadow {
+            0% {
+                background: rgb(172, 171, 171);
+            }
+
+            30% {
+                background: rgb(255, 240, 240);
+            }
+
+            70% {
+                background: rgb(166, 166, 166);
+            }
+
+            100% {
+                background: rgb(122, 122, 122);
+            }
+        }
+
+        @keyframes pyramidLeftShadow {
+            0% {
+                background: rgb(122, 122, 122);
+            }
+
+            30% {
+                background: rgb(166, 166, 166);
+            }
+
+            70% {
+                background: rgb(255, 240, 240);
+            }
+
+            100% {
+                background: rgb(224, 224, 224);
+            }
+        }
+
+        div#sun {
+            position: absolute;
+            z-index: 2;
+            top: 7px;
+            left: 73px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #FFEF00;
+            transform-origin: 50% 400%;
+            animation: sunRiseAndSet 4s cubic-bezier(.4, .5, .49, 1) infinite;
+        }
+
+        div#sand {
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            background: #F0DE75;
+        }
+
+        div#pyramidLeft {
+            position: absolute;
+            z-index: 3;
+            top: 40px;
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            background: white;
+            clip-path: polygon(50% 30%, 100% 100%, 0% 100%);
+            animation: pyramidLeftShadow 4s cubic-bezier(.4, 0, .49, 1) infinite;
+        }
+
+        div#pyramidRight {
+            position: absolute;
+            z-index: 3;
+            top: 50px;
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            background: rgb(226, 226, 226);
+            clip-path: polygon(50% 20%, 60% 90%, 0% 90%);
+            animation: pyrimidRightShadow 4s cubic-bezier(.4, 0, .49, 1) infinite;
+        }
+
+        div#shadow {
+            position: absolute;
+            z-index: 2;
+            top: 124px;
+            left: -80px;
+            height: 70px;
+            width: 360px;
+            background: rgba(0, 0, 0, 0.2);
+            transform-origin: 50% 0%;
+            clip-path: polygon(129px 23%, 230px 23%, 73% 70%);
+            animation: pyramidShadow 4s cubic-bezier(.2, 0, .49, .5) infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div id="sun"></div>
+
+        <div>
+            <div id="pyramidLeft"></div>
+            <div id="pyramidRight"></div>
+        </div>
+
+        <div id="shadow"></div>
+        <div id="sand"></div>
+    </section>
+</body>
+
+</html>
