@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5 - Statistic</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #42A7A1;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        section {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .gap-5 {
+            gap: 1rem;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .bg-yellow-500 {
+            background: #F9A826;
+        }
+
+        .p-5 {
+            padding: 1.25rem;
+        }
+
+        .text-white {
+            color: white;
+        }
+
+        .bg-white {
+            background: white;
+        }
+
+        .rounded-b {
+            border-bottom-left-radius: 0.25rem;
+            border-bottom-right-radius: 0.25rem;
+        }
+
+        .rounded-t {
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <header class="flex justify-between w-full gap-5 bg-yellow-500 p-5 text-white rounded-t">
+            <div>
+                <h1>Weekly Report</h1>
+                <span>01. Feb - 07. Feb</span>
+            </div>
+            <div>
+                <h1>Revenue</h1>
+                <span>$ 3621.79</span>
+            </div>
+        </header>
+        <main class="p-5 bg-white rounded-b">
+            <div>View | Purchase</div>
+            <div id="chart"></div>
+            <div>MON | TUE</div>
+        </main>
+    </section>
+</body>
+
+</html>
