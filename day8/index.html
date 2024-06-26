@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meatballs</title>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #000;
+            color: #333;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            filter: contrast(25);
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .ball {
+            position: relative;
+            background-color: #fff;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            filter: blur(15px);
+        }
+
+        .bubble-1 {
+            position: absolute;
+            top: 10px;
+            left: 30px;
+            background-color: #fff;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            transform: rotate(65deg);
+        }
+
+        .bubble-1:after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            transform-origin: 37px 67px;
+            -webkit-animation: rotate 2.7s ease-in-out 0.2s infinite;
+            animation: rotate 2.7s ease-in-out 0.2s infinite;
+            filter: blur(5px);
+        }
+
+
+        .bubble-2 {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            background-color: #fff;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            transform: rotate(145deg);
+        }
+
+        .bubble-2:after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            transform-origin: 57px 37px;
+            -webkit-animation: rotate 3.7s ease-in-out 1.2s infinite;
+            animation: rotate 3.7s ease-in-out 1.2s infinite;
+            filter: blur(5px);
+        }
+
+
+        .bubble-3 {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            background-color: #fff;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            transform: rotate(145deg);
+        }
+
+        .bubble-3:after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            transform-origin: 17px 97px;
+            -webkit-animation: rotate 5s ease-in-out 1.5s infinite;
+            animation: rotate 5s ease-in-out 1.5s infinite;
+            filter: blur(5px);
+        }
+
+        .bubble-3 {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background-color: #fff;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            transform: rotate(125deg);
+        }
+
+        .bubble-3:after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            transform-origin: 60px 67px;
+            -webkit-animation: rotate 6s ease-in-out 6s infinite;
+            animation: rotate 6s ease-in-out 6s infinite;
+            filter: blur(5px);
+        }
+
+        .bubble-4 {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            background-color: #fff;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            transform: rotate(190deg);
+        }
+
+        .bubble-4:after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            transform-origin: 10px 107px;
+            -webkit-animation: rotate 6s ease-in-out 2s infinite;
+            animation: rotate 6s ease-in-out 2s infinite;
+            filter: blur(5px);
+        }
+
+
+        .bubble-5 {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background-color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transform: rotate(-50deg);
+        }
+
+        .bubble-5:after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            transform-origin: 50px 80px;
+            -webkit-animation: rotate 4.5s ease-in-out 2s infinite;
+            animation: rotate 4.5s ease-in-out 2s infinite;
+            filter: blur(5px);
+        }
+
+        @-webkit-keyframes rotate {
+            from {
+                transform: rotate(0deg) translate3d(0, 0, 0);
+            }
+
+            to {
+                transform: rotate(360deg) translate3d(0, 0, 0);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg) translate3d(0, 0, 0);
+            }
+
+            to {
+                transform: rotate(360deg) translate3d(0, 0, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="ball"></div>
+            <div class="bubble-1"></div>
+            <div class="bubble-2"></div>
+            <div class="bubble-3"></div>
+            <div class="bubble-4"></div>
+            <div class="bubble-5"></div>
+        </div>
+    </div>
+</body>
+
+</html>
