@@ -11,6 +11,7 @@
 | 7   | Notification Page | [Day 7](https://rex-arnab.github.io/100DaysCss/day7/index.html) |
 | 8   | Meatballs         | [Day 8](https://rex-arnab.github.io/100DaysCss/day8/index.html) |
 | 9   | Rainy Day         | [Day 9](https://rex-arnab.github.io/100DaysCss/day9/index.html) |
+| 10   | Watch         | [Day 10](https://rex-arnab.github.io/100DaysCss/day10/index.html) |
 
 **Today's Progress**: Created a simple 100 Days Challenge banner using HTML and CSS.
 
